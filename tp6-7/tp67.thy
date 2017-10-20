@@ -198,15 +198,34 @@ value "BAD (evalS p4 ([],[10],[]))"
 (*Partie 4*)
 fun san::"statement \<Rightarrow> bool"
 where    
-"san (Exec _) = False"|
+"san (Exec (Constant s)) = (if s = 0 then False else True)"|
 "san (Seq s1 s2) = ((san s1) & (san s2))"|
+"san (If _ s1 s2) = ((san s1) & (san s2))"|
 "san _ = True"
 
 value "san p4"
 value "san bad1"
-value "san ok1"
+value "san bad2"
+value "san bad3"
 value "san bad4"
+value "san bad5"
+value "san bad6"
+value "san bad7"
+value "san bad8"
 value "san ok1"
+value "san ok2"
+value "san ok3"
+value "san ok4"
+value "san ok5"
+value "san ok6"
+value "san ok7"
+value "san ok8"
+value "san ok9"
+value "san ok10"
+value "san ok11"
+value "san ok12"
+value "san ok13"
+value "san ok14"
 (* ----- Restriction de l'export Scala (Isabelle 2014) -------*)
 (* ! ! !  NE PAS MODIFIER ! ! ! *)
 (* Suppression de l'export des abstract datatypes (Isabelle 2014) *)
