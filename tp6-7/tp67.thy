@@ -198,7 +198,7 @@ value "BAD (evalS p4 ([],[10],[]))"
 (*Partie 4*)
 fun san::"statement \<Rightarrow> bool"
 where    
-"san (Exec (Constant s)) = (if s = 0 then False else True)"|
+"san (Exec (Constant s)) = (s ~= 0)"|
 "san (Seq s1 s2) = ((san s1) & (san s2))"|
 "san (If _ s1 s2) = ((san s1) & (san s2))"|
 "san _ = True"
